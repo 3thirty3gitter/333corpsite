@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://apifrontend_stage.sinaliteuppy.com/documentation.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Sinalite Pricing API</title><link rel="stylesheet" href="./Sinalite Pricing API_files/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class=""><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#authenication">Authenication</a></div><div class="collapse-content" style="max-height: 47px;"><ul><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#authenication-post"><span class="badge post"><i class="fa fa-plus"></i></span>POST /auth/token</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing">Pricing</a></div><div class="collapse-content" style="max-height: 226px;"><ul><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>GET /product</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>GET /product/{id}</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>GET /product/{id}/{storeCode}</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-post"><span class="badge post"><i class="fa fa-plus"></i></span>POST /price/{id}/{storeCode}</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-3"><span class="badge get"><i class="fa fa-arrow-down"></i></span>GET /variants/{id}/{offset}</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-4"><span class="badge get"><i class="fa fa-arrow-down"></i></span>GET /pricebykey/{id}/{key}</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order">Order</a></div><div class="collapse-content" style="max-height: 223px;"><ul><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-country-code-list">Country Code List</a><ul></ul></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-us-state-code-list">US State Code List</a><ul></ul></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-ca-province-code-list">CA Province Code List</a><ul></ul></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-shipping-method-list">Shipping Method List</a><ul></ul></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-post"><span class="badge post"><i class="fa fa-plus"></i></span>POST /order/new</a></li><li><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>POST /order/shippingEstimate</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">Sinalite Pricing API</h1></header><section id="authenication" class="resource-group"><h2 class="group-heading">Authenication <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#authenication" class="permalink">¶</a></h2><p>Pricing endpoint URL : <a href="https://liveapi.sinalite.com/">https://liveapi.sinalite.com</a>
+Sandbox URL : <a href="https://api.sinaliteuppy.com/">https://api.sinaliteuppy.com</a></p>
+<div id="authenication-" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#authenication-" class="permalink">&nbsp;¶</a></h3><div id="authenication-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#authenication-post" class="method post">POST</a><code class="uri">/auth/token</code></h4><p>Get client credentials exchange to get an access token</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/auth/token</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>Pricing</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">client_id</span>": <span class="hljs-value"><span class="hljs-string">"QF9NlMmXMum7WS8msa9FLytyBlNtAsju"</span></span>,
+  "<span class="hljs-attribute">client_secret</span>": <span class="hljs-value"><span class="hljs-string">"3fBrlEaxEADtXFf7pfLXvPKqp3nBx-AkAxr3L02hfvgMkZxfOD2G8Xo9xce4CcPj"</span></span>,
+  "<span class="hljs-attribute">audience</span>": <span class="hljs-value"><span class="hljs-string">"https://apiconnect.sinalite.com"</span></span>,
+  "<span class="hljs-attribute">grant_type</span>": <span class="hljs-value"><span class="hljs-string">"client_credentials"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">access_token</span>": <span class="hljs-value"><span class="hljs-string">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Inpid2RZR1JwaUUtc0RrYUhESktFZSJ9.eyJpc3MiOiJodHRwczovL3NpbmFsaXRlMi51cy5hdXRoMC5jb20vIiwic3ViIjoiUUY5TmxNbVhNdW03V1M4bXNhOUZMeXR5QmxOdEFzanVAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBpY29ubmVjdC5zaW5hbGl0ZTIuY29tIiwiaWF0IjoxNjA1MDY1NTI1LCJleHAiOjE2MDUxNTE5MjUsImF6cCI6IlFGOU5sTW1YTXVtN1dTOG1zYTlGTHl0eUJsTnRBc2p1IiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.kYM18JapyLqv7u9pLXbDKLPCiRX790V5WZEwnftCvQV4xQAru4obCyb3u53kJ769t-tCeil5fPejsQKdANXktLTLS0pjFrspkvWFo4b-oL8HrahKMGjHjVaPIZ5tb1R05WBYiEGbAY72FfrFrYY-3m7E9GElZzeZKO65VF52x8YrVjZxvouiX_SV45szOn-t0jDOukRtKB9MxjtlnMFDnKyqWopNv_paKkwtwJELcP1WrehrT5S03G4_0YgRjXnx5EIaqVKGWWUdcwwMR3U6itOgvrHOWcsS2hOxxSF6-rDbuWC_VnIxakIOTSWNjAgis63HLVP3jpN4CgggxOXFYA"</span></span>,
+  "<span class="hljs-attribute">token_type</span>": <span class="hljs-value"><span class="hljs-string">"Bearer"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="pricing" class="resource-group"><h2 class="group-heading">Pricing <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing" class="permalink">¶</a></h2><p>Pricing endpoint URL : <a href="https://liveapi.sinalite.com/">https://liveapi.sinalite.com</a>
+Sandbox URL : <a href="https://api.sinaliteuppy.com/">https://api.sinaliteuppy.com</a></p>
+<div id="pricing-" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-" class="permalink">&nbsp;¶</a></h3><div id="pricing-get" class="action get"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get" class="method get">GET</a><code class="uri">/product</code></h4><p>Returns list of products.</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/product</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">sku</span>": <span class="hljs-value"><span class="hljs-string">"businesscard_14pt_profit_maximizer"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Business cards 14pt (Profit Maximizer)"</span></span>,
+    "<span class="hljs-attribute">category</span>": <span class="hljs-value"><span class="hljs-string">"Business Cards"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">sku</span>": <span class="hljs-value"><span class="hljs-string">"businesscard_14pt_aq"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Business Cards 14pt + AQ "</span></span>,
+    "<span class="hljs-attribute">category</span>": <span class="hljs-value"><span class="hljs-string">"Business Cards"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="pricing--1" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing--1" class="permalink">&nbsp;¶</a></h3><div id="pricing-get-1" class="action get"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-1" class="method get">GET</a><code class="uri">/product/{id}</code></h4><p>Returns specific product general data.</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/product/<span class="hljs-attribute" title="id">id</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 64px;"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Product Id</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">sku</span>": <span class="hljs-value"><span class="hljs-string">"businesscard_14pt_profit_maximizer"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Business cards 14pt (Profit Maximizer)"</span></span>,
+    "<span class="hljs-attribute">category</span>": <span class="hljs-value"><span class="hljs-string">"Business Cards"</span></span>,
+    "<span class="hljs-attribute">enabled</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="pricing--2" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing--2" class="permalink">&nbsp;¶</a></h3><div id="pricing-get-2" class="action get"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-2" class="method get">GET</a><code class="uri">/product/{id}/{storeCode}</code></h4><p>Returns specific product pricing data. Returns 3 arrays:</p>
+<li>1st array contains product options.</li>
+<li>2nd array contains pricing combination values.</li>
+<li>3rd array contains product meta data.</li><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/product/<span class="hljs-attribute" title="id">id</span>/<span class="hljs-attribute" title="storeCode">storeCode</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 115px;"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Product Id</p>
+</dd><dt>storeCode</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>StoreId ( 6 - Canada , 9 US )</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  [
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">105</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"25"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">140</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"Turnaround"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"2 - 3 Business Days"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">141</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"10"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">277</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">286</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"15"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">291</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">292</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"30"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">293</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"40"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">445</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"35"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">446</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"qty"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"45"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">447</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"Stock"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Brown Cardboard"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">448</span></span>,
+      "<span class="hljs-attribute">group</span>": <span class="hljs-value"><span class="hljs-string">"size"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"9 x 12 x 9"</span>
+    </span>}
+  ],
+  [
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"06a351ed6890839a53d154686237fead"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"0b97ce31bde3beb5633473fca6693164"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"36"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"125c1fbb92f5a9bd394f3da2f8236f48"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"-1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"1339fb2e9f72a12256a5f59cfd3bd322"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"14fde6692cb33d388de224f7e971728e"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"19e85452ac9695e3afd23eee5dca5e17"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"1c465b64952494641bedfb5834fd3467"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"1ca277ffac733c9189b6d6fcab89e9de"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"1e69d8aa6824740c1b6fdafdb2db7d87"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"-1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"20c5e266192ee943cd484c151e17c460"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"226918a364441f5e713dd30a58c2efd6"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"254f88a14006f0099a9285547ba01ed4"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"26f53daee67bf276d842ba6fcf9acffd"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"28294b18eb1afcc117cdb412130f9bd4"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"2a58c59047afd6d35bac99b44d0679cf"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"22.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"2d057747a4536920e3922e8b02b73197"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"319a93d79851cf93268f57539bf59c6b"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"3386a99a854edaf719f05f37adf00874"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"340d049a09af76b12ea99ce3c79d9ac5"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"3432e920c6e7c3f7142f1e510b4a1e53"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"3453131711ea9497b61f85a0175c6132"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"39eb3fb427a26c4aea3f5fd429cb45bb"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"3c9c5a6cffa7bb0118537b298bab8b9c"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"4ba75ed9696c1b8a1e67f6695bc672a9"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"4bffa2bfbd58d77fd156c14dfe2ca5b6"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"36"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"4f889d6c9a875bd4a3a2b8f5c32950b9"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"40.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"50199a69df382cba36b369350c4e43da"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"534dc2e357f7ce17ff7ae4df23edad47"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"31.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"561dbd233195a8411b14fd37620f2820"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"13.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"56c03e66704e53871fb1ddbe87307300"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"18"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"5a9612a0db5112bd5df642f5ea2e20e4"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"5af0a2f68839a442239d7ce16ab9a431"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"5b39e2cf6360ef83b0148020bfddeba1"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"5b3b9475252546e9f919b01e463303e1"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"5d2f5add6ac12c0912fc9672555b4cc7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6241ffd68fbe56ba969ec103a7b25c7a"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6428307b4280306bd3c9d827d958b29d"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"660f28fe6c4e55751442212891d36768"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6a858c96b12c3b88151558d1e64cedea"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6affd943ce78483be401ff4e215b52cc"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6c50843f9c0395fc360ff171b82bab7a"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"6df35cba55c550e63d1ab16f170bb04d"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.998"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"7185bd3f92c38d5401de01f788e23a32"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"18"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"76273a9a053939268b4e8de1847b3f17"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"7bd334699f9e2c4fed2f9d57f62ba922"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"7d3b52b9e6b9c0c615b4bd7559642f55"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"31.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"824fcaed50f299524086c683a720aa96"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"87513ff9c02ac9f82d2b6cef5b1a445b"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"13.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"89b3fcbed13d53018c63a69c951ef5ff"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"8ade75663ad37560617b83ac5733b4bd"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"94cdbb152b55994279b8c28b98ca36ea"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"9a95cc2cef07e6103d19c5ad732f67df"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"9d6028312eabb2861d6fe53186879957"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"22.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"9e830017e7584d8b1ea4104d17a80204"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"a1cbb32c6253eb337afec92b3f365145"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"a7949bcba7c9af7da60f54d9d621eaa8"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"45"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"ac37e3c52ad327676b08d50ee07d4cdf"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"45"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"aebc58288962af6286948f802f59a963"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"b2155963f2cdc3d0d7b55275a097131e"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"4.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"b63ad51f2e47725c60de43ddbbdb78fd"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"bed061634ff8513fca4b777ae87e979e"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"c150d58f176a47e78d8f07a55199e042"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"c219ee4457a067a0cf94c656326c94b7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"c40ae3dde600808414275407b68039b7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"ce1c68d74234327d9e45a46787ca6a9e"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"4.5"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"d12275afa1258705c0bc2c98f67e4cd7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"d1ec6f4b2f8df8ab83428994cff04552"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"d81e8b7eb510116d89b0fe0c571088ea"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"d88e1ae9d7e5ea82bfa7f6ee63a332b5"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"ddf1c7492088c23320d72ef54de84555"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0.79"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e0216279a5e1aadb3565ad3291f1691d"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e36584ad79ed94b55a5e03f2278d1d91"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"50"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e3c4dd2bb47288667b11d601b5593bfe"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"27"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e4e1680071ec6755c6efe67a7e8c1be2"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e61fc4748523945ef890b91eec235ee1"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"27"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"e71408dd02d7a8ec9e4f6d0881c4971a"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"ebe6d3db1662eb44cbabe03c958a10ce"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"ec4c81100ac796621a23ded513c480d7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"f04eec78e162a39511b542f2a4d1862f"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"f0bee60173aae6ca1263db0873c6c850"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"9"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"f58826f981f8ba6709e0b26207bde8f7"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"0"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">hash</span>": <span class="hljs-value"><span class="hljs-string">"fd7c4b2f2ac37b8591680bf3a6015290"</span></span>,
+      "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"40.5"</span>
+    </span>}
+  ],
+  [
+    {
+      "<span class="hljs-attribute">metadata</span>": <span class="hljs-value"><span class="hljs-string">"custom_size"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">metadata</span>": <span class="hljs-value"><span class="hljs-string">"shapes"</span>
+    </span>}
+  ]
+]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="pricing--3" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing--3" class="permalink">&nbsp;¶</a></h3><div id="pricing-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-post" class="method post">POST</a><code class="uri">/price/{id}/{storeCode}</code></h4><p>Returns price and shipping data for a product combination</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/price/<span class="hljs-attribute" title="id">id</span>/<span class="hljs-attribute" title="storeCode">storeCode</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 115px;"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Product Id</p>
+</dd><dt>storeCode</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>StoreId ( 6 - Canada , 9 US )</p>
+</dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>Pricing</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    productOptions: [optionIds...]
+}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"4.99"</span></span>,
+  "<span class="hljs-attribute">packageInfo</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">total weight</span>": <span class="hljs-value"><span class="hljs-string">"4.5"</span></span>,
+    "<span class="hljs-attribute">weight per box</span>": <span class="hljs-value"><span class="hljs-string">"4.5"</span></span>,
+    "<span class="hljs-attribute">Units Per Box</span>": <span class="hljs-value"><span class="hljs-string">"50"</span></span>,
+    "<span class="hljs-attribute">box size</span>": <span class="hljs-value"><span class="hljs-string">"9 x 9 x 12"</span></span>,
+    "<span class="hljs-attribute">number of boxes</span>": <span class="hljs-value"><span class="hljs-string">"1"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">productOptions</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Stock</span>": <span class="hljs-value"><span class="hljs-string">"Brown Cardboard"</span></span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-string">"9 x 12 x 9"</span></span>,
+    "<span class="hljs-attribute">qty</span>": <span class="hljs-value"><span class="hljs-string">"5"</span></span>,
+    "<span class="hljs-attribute">Turnaround</span>": <span class="hljs-value"><span class="hljs-string">"2 - 3 Business Days"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="pricing--4" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing--4" class="permalink">&nbsp;¶</a></h3><div id="pricing-get-3" class="action get"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-3" class="method get">GET</a><code class="uri">/variants/{id}/{offset}</code></h4><p>Returns variants for products, 1000 variants returned</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/variants/<span class="hljs-attribute" title="id">id</span>/<span class="hljs-attribute" title="offset">offset</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 115px;"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Product Id</p>
+</dd><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<p>Offset value</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">65.59</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"5-140-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">32.8</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"105-140-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">13.12</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-141-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">8.29</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-277-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">19.68</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-286-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">26.24</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-291-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">39.36</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-292-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">52.48</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-293-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">45.92</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-445-447-448"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">59.04</span></span>,
+    "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"140-446-447-448"</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="pricing--5" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing--5" class="permalink">&nbsp;¶</a></h3><div id="pricing-get-4" class="action get"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#pricing-get-4" class="method get">GET</a><code class="uri">/pricebykey/{id}/{key}</code></h4><p>Returns variant price from product id and key</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/pricebykey/<span class="hljs-attribute" title="id">id</span>/<span class="hljs-attribute" title="key">key</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 115px;"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Product Id</p>
+</dd><dt>key</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Variant Key</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">22.51</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="order" class="resource-group"><h2 class="group-heading">Order <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order" class="permalink">¶</a></h2><p>Order endpoint URL : <a href="https://liveapi.sinalite.com/">https://liveapi.sinalite.com</a>
+Sandbox URL : <a href="https://api.sinaliteuppy.com/">https://api.sinaliteuppy.com</a></p>
+<div id="order-country-code-list" class="resource"><h3 class="resource-heading">Country Code List <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-country-code-list" class="permalink">&nbsp;¶</a></h3><ul>
+<li>
+<p>CA</p>
+</li>
+<li>
+<p>US</p>
+</li>
+</ul>
+</div><div id="order-us-state-code-list" class="resource"><h3 class="resource-heading">US State Code List <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-us-state-code-list" class="permalink">&nbsp;¶</a></h3><ul>
+<li>
+<p>AL - Alabama</p>
+</li>
+<li>
+<p>AK - Alaska</p>
+</li>
+<li>
+<p>AS - American Samoa</p>
+</li>
+<li>
+<p>AZ - Arizona</p>
+</li>
+<li>
+<p>AR - Arkansas</p>
+</li>
+<li>
+<p>AE - Armed Forces Africa</p>
+</li>
+<li>
+<p>AA - Armed Forces Americas</p>
+</li>
+<li>
+<p>AE - Armed Forces Canada</p>
+</li>
+<li>
+<p>AE - Armed Forces Europe</p>
+</li>
+<li>
+<p>AE - Armed Forces Middle East</p>
+</li>
+<li>
+<p>AP - Armed Forces Pacific</p>
+</li>
+<li>
+<p>CA - California</p>
+</li>
+<li>
+<p>CO - Colorado</p>
+</li>
+<li>
+<p>CT - Connecticut</p>
+</li>
+<li>
+<p>DE - Delaware</p>
+</li>
+<li>
+<p>DC - District of Columbia</p>
+</li>
+<li>
+<p>FM - Federated States Of Micronesia</p>
+</li>
+<li>
+<p>FL - Florida</p>
+</li>
+<li>
+<p>GA - Georgia</p>
+</li>
+<li>
+<p>GU - Guam</p>
+</li>
+<li>
+<p>HI - Hawaii</p>
+</li>
+<li>
+<p>ID - Idaho</p>
+</li>
+<li>
+<p>IL - Illinois</p>
+</li>
+<li>
+<p>IN - Indiana</p>
+</li>
+<li>
+<p>IA - Iowa</p>
+</li>
+<li>
+<p>KS - Kansas</p>
+</li>
+<li>
+<p>KY - Kentucky</p>
+</li>
+<li>
+<p>LA - Louisiana</p>
+</li>
+<li>
+<p>ME - Maine</p>
+</li>
+<li>
+<p>MH - Marshall Islands</p>
+</li>
+<li>
+<p>MD - Maryland</p>
+</li>
+<li>
+<p>MA - Massachusetts</p>
+</li>
+<li>
+<p>MI - Michigan</p>
+</li>
+<li>
+<p>MN - Minnesota</p>
+</li>
+<li>
+<p>MS - Mississippi</p>
+</li>
+<li>
+<p>MO - Missouri</p>
+</li>
+<li>
+<p>MT - Montana</p>
+</li>
+<li>
+<p>NE - Nebraska</p>
+</li>
+<li>
+<p>NV - Nevada</p>
+</li>
+<li>
+<p>NH - New Hampshire</p>
+</li>
+<li>
+<p>NJ - New Jersey</p>
+</li>
+<li>
+<p>NM - New Mexico</p>
+</li>
+<li>
+<p>NY - New York</p>
+</li>
+<li>
+<p>NC - North Carolina</p>
+</li>
+<li>
+<p>ND - North Dakota</p>
+</li>
+<li>
+<p>MP - Northern Mariana Islands</p>
+</li>
+<li>
+<p>OH - Ohio</p>
+</li>
+<li>
+<p>OK - Oklahoma</p>
+</li>
+<li>
+<p>OR - Oregon</p>
+</li>
+<li>
+<p>PW - Palau</p>
+</li>
+<li>
+<p>PA - Pennsylvania</p>
+</li>
+<li>
+<p>PR - Puerto Rico</p>
+</li>
+<li>
+<p>RI - Rhode Island</p>
+</li>
+<li>
+<p>SC - South Carolina</p>
+</li>
+<li>
+<p>SD - South Dakota</p>
+</li>
+<li>
+<p>TN - Tennessee</p>
+</li>
+<li>
+<p>TX - Texas</p>
+</li>
+<li>
+<p>UT - Utah</p>
+</li>
+<li>
+<p>VT - Vermont</p>
+</li>
+<li>
+<p>VI - Virgin Islands</p>
+</li>
+<li>
+<p>VA - Virginia</p>
+</li>
+<li>
+<p>WA - Washington</p>
+</li>
+<li>
+<p>WV - West Virginia</p>
+</li>
+<li>
+<p>WI - Wisconsin</p>
+</li>
+<li>
+<p>WY - Wyoming</p>
+</li>
+</ul>
+</div><div id="order-ca-province-code-list" class="resource"><h3 class="resource-heading">CA Province Code List <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-ca-province-code-list" class="permalink">&nbsp;¶</a></h3><ul>
+<li>
+<p>AB - Alberta</p>
+</li>
+<li>
+<p>BC - British Columbia</p>
+</li>
+<li>
+<p>MB - Manitoba</p>
+</li>
+<li>
+<p>NL - Newfoundland and Labrador</p>
+</li>
+<li>
+<p>NB - New Brunswick</p>
+</li>
+<li>
+<p>NS - Nova Scotia</p>
+</li>
+<li>
+<p>NT - Northwest Territories</p>
+</li>
+<li>
+<p>NU - Nunavut</p>
+</li>
+<li>
+<p>ON - Ontario</p>
+</li>
+<li>
+<p>PE - Prince Edward Island</p>
+</li>
+<li>
+<p>QC - Quebec</p>
+</li>
+<li>
+<p>SK - Saskatchewan</p>
+</li>
+<li>
+<p>YT - Yukon Territory</p>
+</li>
+</ul>
+</div><div id="order-shipping-method-list" class="resource"><h3 class="resource-heading">Shipping Method List <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-shipping-method-list" class="permalink">&nbsp;¶</a></h3><ul>
+<li>
+<p>UPS Standard</p>
+</li>
+<li>
+<p>UPS Express</p>
+</li>
+<li>
+<p>UPS Expedited</p>
+</li>
+<li>
+<p>UPS Express Saver</p>
+</li>
+<li>
+<p>UPS Worldwide Expedited</p>
+</li>
+<li>
+<p>UPS Saver</p>
+</li>
+<li>
+<p>FedEx Standard Overnight</p>
+</li>
+<li>
+<p>FedEx Economy</p>
+</li>
+<li>
+<p>FedEx Express Saver</p>
+</li>
+<li>
+<p>FedEx International Economy</p>
+</li>
+<li>
+<p>FedEx International Priority</p>
+</li>
+</ul>
+</div><div id="order-" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-" class="permalink">&nbsp;¶</a></h3><div id="order-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-post" class="method post">POST</a><code class="uri">/order/new</code></h4><p>Placing an order</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/order/new</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>Order</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+"<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+{
+  "<span class="hljs-attribute">productId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+  "<span class="hljs-attribute">options</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Stock</span>": <span class="hljs-value"><span class="hljs-string">"30"</span></span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-string">"4"</span></span>,
+    "<span class="hljs-attribute">qty</span>": <span class="hljs-value"><span class="hljs-string">"105"</span></span>,
+    "<span class="hljs-attribute">Coating</span>": <span class="hljs-value"><span class="hljs-string">"93"</span></span>,
+    "<span class="hljs-attribute">Round Corners</span>": <span class="hljs-value"><span class="hljs-string">"540"</span></span>,
+    "<span class="hljs-attribute">Turnaround</span>": <span class="hljs-value"><span class="hljs-string">"140"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">files</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"front"</span></span>,
+      "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://sinalite.com/pdf1.pdf"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"back"</span></span>,
+      "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://sinalite.com/pdf2.pdf"</span>
+    </span>},
+  ]
+</span>},
+{
+  "<span class="hljs-attribute">productId</span>": <span class="hljs-value"><span class="hljs-number">18</span></span>,
+  "<span class="hljs-attribute">options</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Stock</span>": <span class="hljs-value"><span class="hljs-string">"30"</span></span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-string">"59"</span></span>,
+    "<span class="hljs-attribute">qty</span>": <span class="hljs-value"><span class="hljs-string">"7"</span></span>,
+    "<span class="hljs-attribute">Coating</span>": <span class="hljs-value"><span class="hljs-string">"133"</span></span>,
+    "<span class="hljs-attribute">Bundling</span>": <span class="hljs-value"><span class="hljs-string">"80"</span></span>,
+    "<span class="hljs-attribute">Scoring</span>": <span class="hljs-value"><span class="hljs-string">"89"</span></span>,
+    "<span class="hljs-attribute">Turnaround</span>": <span class="hljs-value"><span class="hljs-string">"78"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">files</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"front"</span></span>,
+      "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://sinalite.com/pdf3.pdf"</span>
+    </span>}
+  ]
+</span>}
+]</span>,
+"<span class="hljs-attribute">shippingInfo</span>": <span class="hljs-value">{
+"<span class="hljs-attribute">ShipFName</span>": <span class="hljs-value"><span class="hljs-string">"Arthur"</span></span>,
+"<span class="hljs-attribute">ShipLName</span>": <span class="hljs-value"><span class="hljs-string">"Chan"</span></span>,
+"<span class="hljs-attribute">ShipEmail</span>": <span class="hljs-value"><span class="hljs-string">"arthur.chan@sinalite.com"</span></span>,
+"<span class="hljs-attribute">ShipAddr</span>": <span class="hljs-value"><span class="hljs-string">"335 Steelcase W"</span></span>,
+"<span class="hljs-attribute">ShipAddr2</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+"<span class="hljs-attribute">ShipCity</span>": <span class="hljs-value"><span class="hljs-string">"Markham"</span></span>,
+"<span class="hljs-attribute">ShipState</span>": <span class="hljs-value"><span class="hljs-string">"ON"</span></span>,
+"<span class="hljs-attribute">ShipZip</span>": <span class="hljs-value"><span class="hljs-string">"L3R 1G3"</span></span>,
+"<span class="hljs-attribute">ShipCountry</span>": <span class="hljs-value"><span class="hljs-string">"CA"</span></span>,
+"<span class="hljs-attribute">ShipPhone</span>": <span class="hljs-value"><span class="hljs-string">"1234567890"</span></span>,
+"<span class="hljs-attribute">ShipMethod</span>": <span class="hljs-value"><span class="hljs-string">"UPS Standard"</span>
+</span>}</span>,
+"<span class="hljs-attribute">billingInfo</span>": <span class="hljs-value">{
+"<span class="hljs-attribute">BillFName</span>": <span class="hljs-value"><span class="hljs-string">"Arthur"</span></span>,
+"<span class="hljs-attribute">BillLName</span>": <span class="hljs-value"><span class="hljs-string">"Chan"</span></span>,
+"<span class="hljs-attribute">BillEmail</span>": <span class="hljs-value"><span class="hljs-string">"arthur.chan@sinalite.com"</span></span>,
+"<span class="hljs-attribute">BillAddr</span>": <span class="hljs-value"><span class="hljs-string">"335 Steelcase W"</span></span>,
+"<span class="hljs-attribute">BillAddr2</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+"<span class="hljs-attribute">BillCity</span>": <span class="hljs-value"><span class="hljs-string">"335 Steelcase W"</span></span>,
+"<span class="hljs-attribute">BillState</span>": <span class="hljs-value"><span class="hljs-string">"ON"</span></span>,
+"<span class="hljs-attribute">BillZip</span>": <span class="hljs-value"><span class="hljs-string">"L3R 1G3"</span></span>,
+"<span class="hljs-attribute">BillCountry</span>": <span class="hljs-value"><span class="hljs-string">"CA"</span></span>,
+"<span class="hljs-attribute">BillPhone</span>": <span class="hljs-value"><span class="hljs-string">"1234567890"</span>
+</span>}</span>,
+"<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">"Business Card Test Order"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Order Placed!"</span></span>,
+  "<span class="hljs-attribute">orderId</span>": <span class="hljs-value"><span class="hljs-number">15</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="order--1" class="resource"><h3 class="resource-heading">Resource <a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order--1" class="permalink">&nbsp;¶</a></h3><div id="order-post-1" class="action post"><h4 class="action-heading"><div class="name"></div><a href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#order-post-1" class="method post">POST</a><code class="uri">/order/shippingEstimate</code></h4><p>Requesting shipping rates and shipping methods</p>
+<h1 id="header-response-body">Response Body <a class="permalink" href="https://apifrontend_stage.sinaliteuppy.com/documentation.html#header-response-body" aria-hidden="true">¶</a></h1>
+<ul>
+<li>
+<p>Carrier Name</p>
+</li>
+<li>
+<p>Carrier Method</p>
+</li>
+<li>
+<p>Price</p>
+</li>
+<li>
+<p>Shipping Days</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/order/shippingEstimate</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>ShippingEstimate</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+"<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+{
+  "<span class="hljs-attribute">productId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+  "<span class="hljs-attribute">options</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">Stock</span>": <span class="hljs-value"><span class="hljs-string">"30"</span></span>,
+    "<span class="hljs-attribute">size</span>": <span class="hljs-value"><span class="hljs-string">"4"</span></span>,
+    "<span class="hljs-attribute">qty</span>": <span class="hljs-value"><span class="hljs-string">"105"</span></span>,
+    "<span class="hljs-attribute">Coating</span>": <span class="hljs-value"><span class="hljs-string">"93"</span></span>,
+    "<span class="hljs-attribute">Round Corners</span>": <span class="hljs-value"><span class="hljs-string">"540"</span></span>,
+    "<span class="hljs-attribute">Turnaround</span>": <span class="hljs-value"><span class="hljs-string">"140"</span>
+  </span>}
+</span>}
+]</span>,
+"<span class="hljs-attribute">shippingInfo</span>": <span class="hljs-value">{
+"<span class="hljs-attribute">ShipState</span>": <span class="hljs-value"><span class="hljs-string">"ON"</span></span>,
+"<span class="hljs-attribute">ShipZip</span>": <span class="hljs-value"><span class="hljs-string">"L3R 1G3"</span></span>,
+"<span class="hljs-attribute">ShipCountry</span>": <span class="hljs-value"><span class="hljs-string">"CA"</span></span>,
+}
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">statusCode</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">body</span>": <span class="hljs-value">[
+    [
+      <span class="hljs-string">"UPS"</span>,
+      <span class="hljs-string">"UPS Standard"</span>,
+      <span class="hljs-number">9.1</span>,
+      <span class="hljs-number">1</span>
+    ],
+    [
+      <span class="hljs-string">"UPS"</span>,
+      <span class="hljs-string">"UPS Expedited"</span>,
+      <span class="hljs-number">12.82</span>,
+      <span class="hljs-number">1</span>
+    ],
+    [
+      <span class="hljs-string">"UPS"</span>,
+      <span class="hljs-string">"UPS Express Saver"</span>,
+      <span class="hljs-number">15.67</span>,
+      <span class="hljs-number">1</span>
+    ],
+    [
+      <span class="hljs-string">"UPS"</span>,
+      <span class="hljs-string">"UPS Express"</span>,
+      <span class="hljs-number">23.58</span>,
+      <span class="hljs-number">1</span>
+    ],
+    [
+      <span class="hljs-string">"Federal Express"</span>,
+      <span class="hljs-string">"FedEx Standard Overnight"</span>,
+      <span class="hljs-number">9.67</span>,
+      <span class="hljs-number">1</span>
+    ]
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 23 Mar 2022</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>
