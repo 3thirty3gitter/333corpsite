@@ -1,0 +1,33 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Avatars — employee uploads their own
+    match /avatars/{userId}/{allPaths=**} {
+      allow read: if isSignedIn();
+      allow write: if request.auth.uid == userId;
+    }
+
+    // Documents — authenticated employees read; server handles writes
+    match /documents/{allPaths=**} {
+      allow read: if isSignedIn();
+      allow write: if false; // server-side only
+    }
+
+    // Quick link icons & tool icons — authenticated employees read; admins upload via server
+    match /quickLinkIcons/{allPaths=**} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+    }
+
+    // Product images — server-side only
+    match /products/{allPaths=**} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+  }
+}

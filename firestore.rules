@@ -1,0 +1,82 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: check if requester is an authenticated employee with Admin role
+    function isAdmin() {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/employees/$(request.auth.token.email)) &&
+        get(/databases/$(database)/documents/employees/$(request.auth.token.email)).data.role == 'Admin';
+    }
+
+    function isEmployee() {
+      return request.auth != null;
+    }
+
+    // Employees — admins manage, employees read own record
+    match /employees/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+
+    // Announcements, tools, quick links, knowledge base — all employees read; admins write
+    match /announcements/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+    match /tools/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+    match /quickLinks/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+    match /knowledgeBase/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+
+    // Documents — employees read; admins write
+    match /documents/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+      match /versions/{versionId} {
+        allow read: if isEmployee();
+        allow write: if isAdmin();
+      }
+    }
+
+    // Training — employees read modules; write own progress
+    match /trainingModules/{docId} {
+      allow read: if isEmployee();
+      allow write: if isAdmin();
+    }
+    match /userProgress/{userId}/{docId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if isAdmin();
+    }
+
+    // Markup / pricing — admins only
+    match /markupProfiles/{docId} {
+      allow read, write: if isAdmin();
+    }
+    match /markupRules/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Products & supplier settings — admins only
+    match /products/{docId} {
+      allow read, write: if isAdmin();
+    }
+    match /supplierSettings/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Notifications — employees read/write own
+    match /notifications/{docId} {
+      allow read, write: if isEmployee() && resource.data.userId == request.auth.uid;
+      allow write: if isAdmin();
+    }
+  }
+}
